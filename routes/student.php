@@ -34,6 +34,9 @@ Route::group(['prefix' => 'student'], function () { // all routes here have /stu
     // student signup step1
     Route::get('/signup-step1', [StudentController::class, 'showSignup1'])
         ->name('student_signup1');
+    // student clearance
+    Route::get('/clearance', [StudentController::class, 'showClearance'])
+        ->name('student_clearance');
 
     //-------------------------for functionality routing-------------------------
     // for google single sign on

@@ -28,6 +28,11 @@ class StudentController extends Controller
         return view('student.login');
     }
 
+    public function showClearance()
+    {
+        return view('student.clearance');
+    }
+
     public function showSignup1()
     {
 

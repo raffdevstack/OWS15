@@ -26,8 +26,8 @@
                     <span class="ml-3">Dashboard</span>
                 </a>
             </li>
-            <li>
-                <a href="#" class="@include('partials.__student_sidenav_class_attrib')">
+            <li class="rounded-lg {{ request()->routeIs('student_clearance') ? 'bg-yellow-200' : '' }}">
+                <a href="{{ route('student_clearance') }}" class="@include('partials.__student_sidenav_class_attrib')">
                     <span class="material-symbols-rounded">
                         clear_all
                     </span>
