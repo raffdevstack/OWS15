@@ -34,16 +34,27 @@ class StudentController extends Controller
         return view('student.clearance');
     }
 
-    public function uploadpage()
+    public function download($file)
     {
-        return view('student.product');
+        $filePath = public_path('assets/' . $file);
+
+        if (file_exists($filePath)) {
+            return response()->download($filePath);
+        } else {
+            return response()->json(['error' => 'File not found'], 404);
+        }
     }
 
-    public function show()
-    {
-        $data = Product::all();
-        return view('student.showproduct', compact('data'));
-    }
+    // public function uploadpage()
+    // {
+    //     return view('student.product');
+    // }
+
+    // public function show()
+    // {
+    //     $data = Product::all();
+    //     return view('student.showproduct', compact('data'));
+    // }
 
     public function showSignup1()
     {

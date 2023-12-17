@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 // all student routes here
 Route::group(['prefix' => 'student'], function () { // all routes here have /student/ prefix
@@ -38,11 +39,9 @@ Route::group(['prefix' => 'student'], function () { // all routes here have /stu
     // student clearance
     Route::get('/clearance', [StudentController::class, 'showClearance'])
         ->name('student_clearance');
-    // SAMPLE ROUTE FOR MY TASK WHICH IS TO IMPLEMENT A DOWNLOADABLE FILE
-    Route::get('/product', [StudentController::class, 'uploadpage'])
-        ->name('uploadPage');
-    Route::get('/showproduct', [StudentController::class, 'show'])
-        ->name('show_product');
+    // Downloadable file
+    Route::get('/download/{file}', [StudentController::class, 'download'])
+        ->name('download_file');
     
     //-------------------------for functionality routing-------------------------
     // for google single sign on
