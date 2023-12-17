@@ -18,9 +18,4 @@ class Controller extends BaseController
     public function showTermsAndConditions() {
         return view('terms_conditions');
     }
-
-    public function store(Request $request)
-    {
-        return $request;
-    }
 }

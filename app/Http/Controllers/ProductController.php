@@ -26,17 +26,41 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    
+
     public function store(Request $request)
     {
-        //
+        // Validate the incoming request data before processing it
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'file' => 'required|file', // Add appropriate file validation rules
+        ]);
+
+        $product = new Product();
+
+        // Handle file upload
+        $file = $request->file('file');
+        $filename = time() . '.' . $file->getClientOriginalExtension();
+        $file->move('assets', $filename);
+
+        // Set data to the product instance
+        $product->file = $filename;
+        $product->name = $validatedData['name'];
+        $product->description = $validatedData['description'];
+
+        $product->save();
+
+        return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show()
     {
-        //
+        $data = products::all();
+        return view('showproduct', compact('data'));
     }
 
     /**

@@ -3,7 +3,9 @@
 
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+
 
 require __DIR__ . '/student.php';
 require __DIR__ . '/admin.php';
@@ -43,5 +45,9 @@ Route::get('/data-privacy', [Controller::class, 'showDataPrivacyPolicy'])
     ->name('data_privacy');
 Route::get('/terms-conditions', [Controller::class, 'showTermsAndConditions'])
     ->name('terms_conditions');
-Route::post('/uploadproduct', [Controller::class, 'store'])
+
+Route::post('/uploadproduct', [ProductController::class, 'store'])
     ->name('uploadproduct');
+
+Route::get('/show', [ProductController::class, 'show'])
+    ->name('show_product');

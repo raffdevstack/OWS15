@@ -25,9 +25,19 @@
                 </ol>
             </nav>
         </div>
+        <br>
+        <div>
+            {{-- <a class="btn btn-success" href="{{ route('uploadPage') }}">Upload Page</a> --}}
+        </div>
 
         <div>
-            
+            <form action="{{route('uploadproduct')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input class="border border-gray-900" type="text" name="name" placeholder="Product Name">
+                <input class="border border-gray-900" type="text" name="description" placeholder="Product Description">
+                <input class="border border-gray-900" type="file" name="file">
+                <input class="border border-gray-900" type="submit">
+            </form>
         </div>
     </div>
 </div>
