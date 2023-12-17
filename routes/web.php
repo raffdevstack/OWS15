@@ -4,6 +4,7 @@
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -48,6 +49,3 @@ Route::get('/terms-conditions', [Controller::class, 'showTermsAndConditions'])
 
 Route::post('/uploadproduct', [ProductController::class, 'store'])
     ->name('uploadproduct');
-
-Route::get('/show', [ProductController::class, 'show'])
-    ->name('show_product');

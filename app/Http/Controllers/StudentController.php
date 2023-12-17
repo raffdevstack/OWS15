@@ -6,6 +6,7 @@ use Exception;
 use App\Models\Course;
 use App\Models\Student;
 use App\Models\QRCode;
+use App\Models\Product;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -36,6 +37,12 @@ class StudentController extends Controller
     public function uploadpage()
     {
         return view('student.product');
+    }
+
+    public function show()
+    {
+        $data = Product::all();
+        return view('student.showproduct', compact('data'));
     }
 
     public function showSignup1()

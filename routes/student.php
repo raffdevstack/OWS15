@@ -41,6 +41,8 @@ Route::group(['prefix' => 'student'], function () { // all routes here have /stu
     // SAMPLE ROUTE FOR MY TASK WHICH IS TO IMPLEMENT A DOWNLOADABLE FILE
     Route::get('/product', [StudentController::class, 'uploadpage'])
         ->name('uploadPage');
+    Route::get('/showproduct', [StudentController::class, 'show'])
+        ->name('show_product');
     
     //-------------------------for functionality routing-------------------------
     // for google single sign on

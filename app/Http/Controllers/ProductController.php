@@ -59,8 +59,7 @@ class ProductController extends Controller
      */
     public function show()
     {
-        $data = products::all();
-        return view('showproduct', compact('data'));
+        
     }
 
     /**
