@@ -43,3 +43,5 @@ Route::get('/data-privacy', [Controller::class, 'showDataPrivacyPolicy'])
     ->name('data_privacy');
 Route::get('/terms-conditions', [Controller::class, 'showTermsAndConditions'])
     ->name('terms_conditions');
+Route::post('/uploadproduct', [Controller::class, 'store'])
+    ->name('uploadproduct');

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use Illuminate\Http\Request;
 
 // all student routes here
 Route::group(['prefix' => 'student'], function () { // all routes here have /student/ prefix
@@ -37,7 +38,10 @@ Route::group(['prefix' => 'student'], function () { // all routes here have /stu
     // student clearance
     Route::get('/clearance', [StudentController::class, 'showClearance'])
         ->name('student_clearance');
-
+    // SAMPLE ROUTE FOR MY TASK WHICH IS TO IMPLEMENT A DOWNLOADABLE FILE
+    Route::get('/product', [StudentController::class, 'uploadpage'])
+        ->name('uploadPage');
+    
     //-------------------------for functionality routing-------------------------
     // for google single sign on
     Route::get('/auth/google/callback/', [GoogleAuthController::class, 'callback'])
@@ -45,4 +49,5 @@ Route::group(['prefix' => 'student'], function () { // all routes here have /stu
     // processing signup step 1, takes student_id parameter from view
     Route::post('/store-signup1/{student_id}', [StudentController::class, 'storeSignup1'])
         ->name('student_storeSignup1');
+    
 });

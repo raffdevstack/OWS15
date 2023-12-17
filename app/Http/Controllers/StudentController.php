@@ -33,6 +33,11 @@ class StudentController extends Controller
         return view('student.clearance');
     }
 
+    public function uploadpage()
+    {
+        return view('student.product');
+    }
+
     public function showSignup1()
     {
 
