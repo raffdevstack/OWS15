@@ -26,10 +26,9 @@
             </nav>
         </div>
 
-        <h1>Hello world!</h1>
-
-        {{-- Download a file --}}
-        <a class="btn btn-success" href="{{ route('uploadPage') }}">Upload Page</a>
+        <div>
+            
+        </div>
     </div>
 </div>
 </div>
