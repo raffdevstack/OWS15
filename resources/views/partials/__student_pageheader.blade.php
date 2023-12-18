@@ -13,13 +13,24 @@
             data-dropdown-placement="bottom">
             <span class="sr-only">Open user menu</span>
 
+            {{-- <img class="h-10 w-10 rounded-full border-4"
+                @if (Auth::user()->student_picture) if user uploaded a photo --}}
+            {{-- src="{{ Auth::user()->student_picture }}"
+            @else --}}
+            {{-- Provide a default image or leave it empty --}}
+            {{-- src="https://api.dicebear.com/7.x/initials/svg?seed=" @endif> --}}
+
+            <!--  Additional Checks -->
             <img class="h-10 w-10 rounded-full border-4"
-                @if (Auth::user()->student_picture) {{-- if user uploaded a photo --}}
-            src="{{ Auth::user()->student_picture }}"
-        @else
-        {{-- Provide a default image or leave it empty --}}
-        src="https://api.dicebear.com/7.x/initials/svg?seed=" @endif>
+            @if (Auth::check() && Auth::user()->student_picture) {{-- Check if user is authenticated and has student_picture --}}
+                src="{{ Auth::user()->student_picture }}"
+            @else
+                src="https://api.dicebear.com/7.x/initials/svg?seed=" {{-- Provide a default image or leave it empty --}}
+            @endif>
         </button>
+
+        
+
 
         <!-- menu after profile button click -->
         <div class="absolute left-0 top-12 z-40 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow "
