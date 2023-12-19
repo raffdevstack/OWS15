@@ -34,6 +34,11 @@ class StudentController extends Controller
         return view('student.clearance');
     }
 
+    public function showScholarship()
+    {
+        return view('student.scholarship');
+    }
+
     public function download($file)
     {
         $filePath = public_path('assets/' . $file);

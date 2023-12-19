@@ -39,6 +39,9 @@ Route::group(['prefix' => 'student'], function () { // all routes here have /stu
     // student clearance
     Route::get('/clearance', [StudentController::class, 'showClearance'])
         ->name('student_clearance');
+    // student scholarship
+    Route::get('/scholarship', [StudentController::class, 'showScholarship'])
+        ->name('student_scholarship');
     // Downloadable file
     Route::get('/download/{file}', [StudentController::class, 'download'])
         ->name('download_file');

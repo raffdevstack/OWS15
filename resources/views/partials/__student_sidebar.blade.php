@@ -42,8 +42,8 @@
                     <span class="flex-1 ml-3  whitespace-nowrap">Student Activities</span>
                 </a>
             </li>
-            <li>
-                <a href="#" class="@include('partials.__student_sidenav_class_attrib')">
+            <li class="rounded-lg {{ request()->routeIs('student_scholarship') ? 'bg-yellow-200' : '' }}">
+                <a href="{{ route('student_scholarship') }}" class="@include('partials.__student_sidenav_class_attrib')">
                     <span class="material-symbols-rounded">
                         school
                     </span>
